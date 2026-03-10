@@ -1,4 +1,4 @@
-# Robotics Management System - Actividad 8
+# Robotics Management System - Tarea 6
 
 ## 📝 Descripción del Proyecto
 Este sistema está diseñado para gestionar los procesos de una academia de robótica, permitiendo el control de usuarios (administrativos, profesores y alumnos), la organización de grupos de estudio y el catálogo de cursos con su respectivo material didáctico.
