@@ -4,15 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Material extends Model
 {
+    use HasFactory;
+
     /**
      * Los atributos que se pueden asignar de forma masiva.
      */
     protected $fillable = [
-        'nombre',    // Nombre del kit (StarterKit, etc.)
-        'course_id', // Relación con el curso
+        'name',         // Cambiado de 'nombre' a 'name'
+        'description',  // Añadido para que permita guardar la descripción del kit
+        'course_id',    // Relación con el curso
     ];
 
     /**

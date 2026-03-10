@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('groups', function (Blueprint $table) {
-            $table->id(); // Esta es tu PK
-            $table->string('nombre'); // <-- ESTA ES LA LÍNEA QUE AGREGAMOS
+            $table->id(); 
+            $table->string('name'); // Cambiado de 'nombre' a 'name'
             $table->timestamps();
         });
     }

@@ -13,15 +13,15 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            // Cambiamos 'name' por 'username' para que coincida con tu Seeder
+            $table->string('username'); 
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             
-            // --- CAMBIOS PARA TU ACTIVIDAD ---
-            $table->string('role')->default('student'); // student, teacher, admin
-            $table->foreignId('group_id')->nullable()->constrained('groups'); 
-            // ----------------------------------
+            // Campos requeridos para la actividad
+            $table->string('role'); // Administrative, Teacher, Student
+            $table->foreignId('group_id')->constrained('groups'); 
 
             $table->rememberToken();
             $table->timestamps();

@@ -12,11 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('materials', function (Blueprint $table) {
-            $table->id(); // PK
-            $table->string('nombre'); // Ej: StarterKit, Kit5 (según Excel)
+            $table->id();
+            $table->string('name'); // Cambiado a 'name' para coincidir con el Seeder
+            $table->text('description')->nullable(); 
             
-            // Llave Foránea: El material pertenece a un curso específico
-            $table->foreignId('course_id')->constrained('courses')->onDelete('cascade');
+            // Hacemos que sea nullable para que no de error al crear los kits iniciales
+            $table->foreignId('course_id')->nullable()->constrained('courses')->onDelete('cascade');
             
             $table->timestamps();
         });
